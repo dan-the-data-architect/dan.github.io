@@ -1,0 +1,200 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
+
+$Lato: "Lato", sans-serif;
+$Open-sans: "Open Sans", sans-serif;
+$dark-gray: #3c3c3c;
+$light-gray: #a6a6a6;
+$UIblue: #3cbbf7;
+$UIred: #e74c3c;
+$UIyellow: #f8e71c;
+$UIgreen: #13bf11;
+$dark-brown: #542900;
+
+@media screen and (max-width: 875px) {
+  .button-container {
+    margin: 10px 10px !important;
+  }
+}
+
+html,
+body {
+  font-family: $Lato;
+  font-weight: 300;
+}
+
+a {
+  color: $dark-gray;
+}
+
+span {
+  font-size: 15px;
+}
+
+
+.button-row-container {
+  width: 250px;
+  height: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.button-container {
+  display: inline-block;
+  margin: 10px 10px;
+  cursor: pointer;
+  font-weight: 400;
+  letter-spacing: 2px;
+  height: 45px;
+  width: 200px;
+  -webkit-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+
+  .flipper {
+    transition: all 0.5s ease-in-out;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    position: relative;
+  }
+
+  .button {
+    height: 45px;
+    width: 200px;
+    border-radius: 3px;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-box-shadow: 1px 2px 4px -1px rgba(60, 60, 60, 0.64);
+    box-shadow: 1px 2px 4px -1px rgba(60, 60, 60, 0.64);
+
+    .center {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+    }
+
+    i.fa {
+      color: white;
+      font-size: 20px;
+      margin: auto;
+      text-shadow: 0.5px 1px 2px #3c3c3c;
+    }
+
+    &.front {
+      z-index: 10;
+    }
+
+    &.back {
+      color: white;
+      font-size: 15px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+}
+
+.button-flip3d-vertical1 {
+  .flipper-flip3d-vertical1 {
+    transform-origin: 100% 22.5px;
+  }
+
+  .front {
+    transform: translateZ(22.5px);
+    background-image: -webkit-linear-gradient(90deg, #53a0fd, #01c2f3);
+    background-image: linear-gradient(90deg, #53a0fd, #01c2f3);
+  }
+
+  .back {
+    -webkit-transform: rotateX(90deg) translateZ(22.5px);
+    -ms-transform: rotateX(90deg) translateZ(22.5px);
+    transform: rotateX(90deg) translateZ(22.5px);
+    background-image: -webkit-linear-gradient(90deg, #01c2f3, #53a0fd);
+    background-image: linear-gradient(90deg, #01c2f3, #53a0fd);
+  }
+
+  &:hover .flipper-flip3d-vertical1 {
+    transform: rotateX(-90deg);
+  }
+}
+
+.button-flip3d-vertical2 {
+  .flipper-flip3d-vertical2 {
+    transform-origin: 100% 22.5px;
+  }
+
+  .front {
+    transform: translateZ(22.5px);
+    background-image: linear-gradient(90deg, #ea4c89, #ee9b83);
+  }
+
+  .back {
+    -webkit-transform: rotateX(90deg) rotateZ(180deg) rotateY(180deg)
+      translateZ(22.5px);
+    -ms-transform: rotateX(90deg) rotateZ(180deg) rotateY(180deg)
+      translateZ(22.5px);
+    transform: rotateX(90deg) rotateZ(180deg) rotateY(180deg) translateZ(22.5px);
+    background-image: linear-gradient(90deg, #ee9b83, #ea4c89);
+  }
+
+  &:hover .flipper-flip3d-vertical2 {
+    transform: rotateX(90deg);
+  }
+}
+
+.button-flip3d-vertical3 {
+  .flipper-flip3d-vertical3 {
+    transform-origin: 100% 22.5px;
+  }
+
+  .front {
+    transform: translateZ(22.5px);
+    background-image: -webkit-linear-gradient(90deg, #ffff00, #ffd700);
+    background-image: linear-gradient(90deg, #ffff00, #ffd700);
+  }
+
+  .back {
+    -webkit-transform: rotateX(90deg) translateZ(22.5px);
+    -ms-transform: rotateX(90deg) translateZ(22.5px);
+    transform: rotateX(90deg) translateZ(22.5px);
+    background-image: -webkit-linear-gradient(90deg, #ffd700, #ffff00);
+    background-image: linear-gradient(90deg, #ffd700, #ffff00);
+  }
+
+  &:hover .flipper-flip3d-vertical3 {
+    transform: rotateX(-90deg);
+  }
+}
+
+.dropbtn {
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: top;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: top;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.show {display:block;}
+
+/* Coded by Humdan :p  */
